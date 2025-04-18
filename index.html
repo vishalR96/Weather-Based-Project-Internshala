@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/ceaf19f0cc.js" crossorigin="anonymous"></script>
+    <link rel="icon" href="./favicon.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="./style.css">
+    <title>TempX - Your Companion</title>
+</head>
+<body class="font-['Poppins'] tracking-[0.1rem] bg-[var(--d-color)] text-[var(--h-color)]">
+    <div id="preloader" class="fixed inset-0 h-full w-full bg-[var(--a-color)] bg-[url(./loader.gif)] bg-center bg-no-repeat bg-[40%] z-[9999]"></div>
+    <header class="page1 w-full h-screen overflow-x-hidden" id="home">
+      <div class="fixed top-0 left-0 w-full bg-white/50 z-[999] h-[13vh]">
+          <nav class="navbar container mx-auto h-full flex items-center justify-between px-[9rem]">
+              <div class="logo"><a href="#home"><h1 class="text-5xl font-bold font-['Allison'] text-black">Temp<span class="text-blue-600">X</span></h1></a></div>
+              <div class="navitems">
+                  <ul class="items flex items-center justify-between gap-12">
+                      <li><a href="#home" class="text-xl text-[var(--f-color)] no-underline transition-transform duration-200 ease-in-out hover:scale-110 hover:text-[var(--c-color)] hidden md:inline-block">Home</a></li>
+                      <li><a href="#wet"><button class="h-10 w-full max-w-[10rem] mx-4 my-4 text-[1.3rem] rounded-full border-2 border-[var(--c-color)] bg-[url('./pexels-akos-szabo-145938-440731.jpg')] bg-center bg-cover text-[var(--a-color)] transition-all duration-200 ease-linear cursor-pointer relative overflow-hidden hover:bg-[var(--c-color)] hover:shadow-[0_0_30px_var(--c-color)] hover:text-[var(--a-color)] hover:border-dashed hover:border-[var(--c-color)] hover:tracking-[.4rem]">Weather <i class="fa-solid fa-magnifying-glass-location"></i></button></a></li>
+                      <li><a href="#photos" class="text-xl text-[var(--f-color)] no-underline transition-transform duration-200 ease-in-out hover:scale-110 hover:text-[var(--c-color)] hidden md:inline-block">Photos</a></li>
+                      <li><a href="#safety" class="text-xl text-[var(--f-color)] no-underline transition-transform duration-200 ease-in-out hover:scale-110 hover:text-[var(--c-color)] hidden md:inline-block">Safety Tips</a></li>
+                      <li><a href="#connect" class="text-xl text-[var(--f-color)] no-underline transition-transform duration-200 ease-in-out hover:scale-110 hover:text-[var(--c-color)] hidden md:inline-block">Connect</a></li>
+                      <li><img src="./moon.png" id="icon" alt="Day/Night toggle mode" class="w-8 cursor-pointer"></li>
+                  </ul>
+              </div>
+          </nav>
+      </div>
+      
+      <main>
+          <div class="frame relative h-screen">
+              <img src="./watch-removebg-preview.png" alt="" loading="lazy" class="hidden md:block absolute right-0 top-[30%] w-[40vw] max-w-full h-auto">
+              <div class="content container absolute left-[5vw] top-[20vh] w-[90vw] max-w-[600px] text-justify bg-white/35 p-8 rounded-xl">
+                  <h1 class="text-5xl text-[black] font-['Rouge_Script'] mb-[1vh]">Temp<span class="text-[blue]">X</span> - Know Your Sky, Before You Fly!</h1>
+                  <p class="text-xl text-[var(--f-color)] font-black">With TempX, get real-time weather updates right at your fingertips.</p>
+                  <p class="text-xl text-[var(--f-color)] font-black">Just type your city name and discover:</p>
+                  <p class="text-xl text-[var(--f-color)] font-black">Scroll down or head to the Forecast Section below to explore the weather for today and the next 5 days — all in just one tap!</p>
+                  <p class="text-xl text-[var(--f-color)] font-black">Whether it's sunny, rainy, or cloudy —</p>
+                  <p class="text-xl text-[var(--f-color)] font-black">TempX keeps you prepared, informed, and ahead of the skies.</p>
+              </div>
+          </div>
+      </main>
+    </header>
+
+    <section class="page2 bg-[var(--d-color)] text-[var(--h-color)] py-4 sm:py-8 px-4 sm:px-[8rem]" id="wet">
+      <h2 class="text-center text-3xl sm:text-5xl pt-2 sm:pt-4 text-[var(--c-color)]">"Weather Forecast"</h2>
+      <h3 class="text-center text-base sm:text-2xl w-full sm:w-[80vw] pt-2 sm:pt-4 mx-auto font-normal pb-2 sm:pb-4">
+        Discover what the sky has in store for you today — temperature, rain, wind, and more.
+      </h3>
+    
+      <div class="box container min-h-[100dvh] border-2 border-[var(--g-color)] rounded-3xl p-2 sm:p-4">
+    
+        <!-- Box 1 -->
+        <div class="box1 w-full flex flex-col sm:flex-row items-center justify-between gap-2 sm:gap-4 pt-2 sm:pt-4">
+          
+          <!-- col1 -->
+          <div class="col1 panel w-full sm:flex-1 min-h-20 sm:min-h-24 flex items-center justify-center rounded-3xl p-2 sm:p-4 hidden">
+            <h1 class="city text-xl sm:text-[2rem] text-center"></h1>
+          </div>
+    
+          <!-- col2 -->
+          <div class="col2 w-full sm:flex-1 min-h-20 sm:min-h-24 flex flex-col sm:flex-row items-center justify-center gap-2 rounded-3xl p-2 sm:p-4">
+            <input type="text" placeholder="Type your city..."
+              class="w-[20rem] h-10 text-base sm:text-xl rounded border-2 border-[var(--c-color)] bg-transparent text-[var(--h-color)] p-2" />
+    
+            <select
+              class="recent-cities-dropdown hidden w-full sm:w-[20%] p-2 bg-white text-blue-500 border border-blue-500 rounded cursor-pointer mt-2 sm:mt-0 sm:ml-2">
+              <option value="">Recent cities</option>
+            </select>
+    
+            <div class="flex items-center gap-2 w-full sm:w-auto mt-2 sm:mt-0">
+              <button class="h-10 px-4 w-full max-w-[10rem] mx-4 my-4 text-[1.3rem] rounded-full border-2 border-[var(--c-color)] bg-[url('./pexels-akos-szabo-145938-440731.jpg')] bg-center bg-cover text-[var(--a-color)] transition-all duration-200 ease-linear cursor-pointer relative overflow-hidden hover:bg-[var(--c-color)] hover:shadow-[0_0_30px_var(--c-color)] hover:text-[var(--a-color)] hover:border-dashed hover:border-[var(--c-color)] hover:tracking-[.4rem]">Search</button>
+              <i class="fa-solid fa-location-crosshairs text-2xl sm:text-3xl text-[var(--c-color)] animate-spin [animation-duration:4s]"></i>
+            </div>
+          </div>
+        </div>
+    
+        <!-- Box 2 -->
+        <div class="box2 w-full flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4 mt-2 sm:mt-4">
+          
+          <!-- col1 -->
+          <div class="col1 panel w-full sm:w-fit p-2 sm:p-4 min-h-[15vh] rounded-3xl hidden">
+            <p class="temp text-4xl sm:text-[clamp(2rem,5vw,6rem)] text-center">_&deg;c</p>
+          </div>
+    
+          <!-- col3 -->
+          <div class="col3 panel w-full sm:w-fit p-2 sm:p-4 min-h-[15vh] rounded-3xl hidden flex justify-center">
+            <img class="weathericon w-20 sm:w-28 m-2 sm:m-[1.7rem]" src="./earth.png" alt="Weather Icon">
+          </div>
+    
+          <!-- col2 -->
+          <div class="col2 panel w-full sm:w-fit p-2 sm:p-4 min-h-[15vh] rounded-3xl hidden">
+            <div class="flex flex-col gap-1 sm:gap-2 text-base sm:text-xl">
+              <p class="flex items-center">
+                <i class="fa-solid fa-droplet mr-2 text-[var(--c-color)]"></i> Humidity: <span class="humidity"></span>
+              </p>
+              <p class="flex items-center">
+                <i class="fa-solid fa-wind mr-2 text-[var(--c-color)]"></i> Wind: <span class="wind"></span>
+              </p>
+              <p class="flex items-center">
+                <i class="fa-solid fa-temperature-high mr-2 text-[var(--c-color)]"></i> Feels Like: <span class="feel"></span>
+              </p>
+            </div>
+          </div>
+        </div>
+    
+        <!-- Box 3 (Forecast Cards) -->
+        <div class="box3 w-full mt-4 sm:mt-8 min-h-[30vh] rounded-3xl grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-2 sm:gap-4">
+          <div class="card1 panel min-h-[25vh] sm:min-h-[40vh] rounded-xl bg-[var(--i-color)] backdrop-blur-sm p-2 sm:p-4 text-center hidden border-2 border-[var(--c-color)] flex flex-col items-center justify-center"></div>
+          <div class="card2 panel min-h-[25vh] sm:min-h-[40vh] rounded-xl bg-[var(--i-color)] backdrop-blur-sm p-2 sm:p-4 text-center hidden border-2 border-[var(--c-color)] flex flex-col items-center justify-center"></div>
+          <div class="card3 panel min-h-[25vh] sm:min-h-[40vh] rounded-xl bg-[var(--i-color)] backdrop-blur-sm p-2 sm:p-4 text-center hidden border-2 border-[var(--c-color)] flex flex-col items-center justify-center"></div>
+          <div class="card4 panel min-h-[25vh] sm:min-h-[40vh] rounded-xl bg-[var(--i-color)] backdrop-blur-sm p-2 sm:p-4 text-center hidden border-2 border-[var(--c-color)] flex flex-col items-center justify-center"></div>
+          <div class="card5 panel min-h-[25vh] sm:min-h-[40vh] rounded-xl bg-[var(--i-color)] backdrop-blur-sm p-2 sm:p-4 text-center hidden border-2 border-[var(--c-color)] flex flex-col items-center justify-center"></div>
+        </div>
+      </div>
+    </section>
+    
+    <section id="photos" class="min-h-screen w-full bg-[var(--d-color)] px-5 py-16 text-center page3">
+        <div class="text-center pt-8 container frame1">
+            <h2 class="text-5xl text-center text-[var(--c-color)]">"Visual Weather Vibes"</h2>
+        <h3 class="text-xl font-normal text-center w-[80vw] mx-auto py-4 text-[var(--h-color)]">
+            Feel the forecast through imagery. Discover the beauty of weather through captivating images. From clear skies to stormy evenings, this section visually captures the essence of various weather conditions. Enjoy the scrolling Gallery and feel the vibe of nature's moods — all in one place.
+        </h3>
+        </div>
+        <div class="relative overflow-hidden w-[90%] mx-auto mt-8 slider">
+            
+            <div class="relative overflow-hidden w-[90%] mx-auto mt-8">
+                <div class="flex w-max animate-scroll">
+              
+                  <div class="flex">
+                    <img src="./pexels-nurseryart-346885.jpg" class="w-80 h-60 mx-4 rounded-xl" loading="lazy" />
+                    <img src="./pexels-akilmazumder-1072824.jpg" class="w-80 h-60 mx-4 rounded-xl" loading="lazy" />
+                    <img src="./pexels-baurzhan-kadylzhanov-129000-394545.jpg" class="w-80 h-60 mx-4 rounded-xl" loading="lazy" />
+                    <img src="./pexels-mali-142497.jpg" class="w-80 h-60 mx-4 rounded-xl" loading="lazy" />
+                    <img src="./pexels-lucasallmann-612892.jpg" class="w-80 h-60 mx-4 rounded-xl" loading="lazy" />
+                  </div>
+                 
+                  <div class="flex">
+                    <img src="./pexels-nurseryart-346885.jpg" class="w-80 h-60 mx-4 rounded-xl" loading="lazy" />
+                    <img src="./pexels-akilmazumder-1072824.jpg" class="w-80 h-60 mx-4 rounded-xl" loading="lazy" />
+                    <img src="./pexels-baurzhan-kadylzhanov-129000-394545.jpg" class="w-80 h-60 mx-4 rounded-xl" loading="lazy" />
+                    <img src="./pexels-mali-142497.jpg" class="w-80 h-60 mx-4 rounded-xl" loading="lazy" />
+                    <img src="./pexels-lucasallmann-612892.jpg" class="w-80 h-60 mx-4 rounded-xl" loading="lazy" />
+                  </div>
+    
+                  <div class="flex">
+                    <img src="./pexels-nurseryart-346885.jpg" class="w-80 h-60 mx-4 rounded-xl" loading="lazy" />
+                    <img src="./pexels-akilmazumder-1072824.jpg" class="w-80 h-60 mx-4 rounded-xl" loading="lazy" />
+                    <img src="./pexels-baurzhan-kadylzhanov-129000-394545.jpg" class="w-80 h-60 mx-4 rounded-xl" loading="lazy" />
+                    <img src="./pexels-mali-142497.jpg" class="w-80 h-60 mx-4 rounded-xl" loading="lazy" />
+                    <img src="./pexels-lucasallmann-612892.jpg" class="w-80 h-60 mx-4 rounded-xl" loading="lazy" />
+                  </div>
+                </div>
+        
+           
+            <div class="absolute top-0 left-0 h-60 w-20 bg-gradient-to-r from-[var(--a-color)] to-transparent z-10"></div>
+            <div class="absolute top-0 right-0 h-60 w-20 bg-gradient-to-l from-[var(--a-color)] to-transparent z-10"></div>
+          </div>
+          
+      </section>
+    
+      <section id="safety" class="min-h-screen w-full bg-[var(--d-color)] px-5 py-16 text-center">
+        <h2 class="text-5xl text-center text-[var(--c-color)]">"Weather Tips & Safety"</h2>
+        <h3 class="text-xl font-normal text-center w-[80vw] mx-auto py-4 text-[var(--h-color)]">
+            Stay safe and informed with these seasonal weather safety tips. Whether it's monsoon, summer, or winter — be prepared and stay healthy.
+        </h3>
+    
+      
+        <div class="flex flex-wrap justify-center gap-8">
+          
+          <div class="bg-[var(--e-color)] rounded-xl shadow-md shadow-[var(--f-color)] h-96 p-5 w-72 text-left transform transition-transform duration-700 hover:scale-110">
+            <h3 class="text-[var(--c-color)] text-xl mb-2">Monsoon Safety Tips</h3>
+            <ul class="text-[var(--f-color)] list-disc pl-5 text-sm space-y-2">
+              <li>Carry an umbrella or raincoat.</li>
+              <li>Wear non-slippery shoes.</li>
+              <li>Avoid flood water paths.</li>
+              <li>Waterproof your gadgets.</li>
+              <li>Check weather alerts.</li>
+            </ul>
+          </div>
+      
+          
+          <div class="bg-[var(--e-color)] rounded-xl shadow-md shadow-[var(--f-color)] p-5 w-72 text-left transform transition-transform duration-700 hover:scale-110">
+            <h3 class="text-[var(--c-color)] text-xl mb-2">Summer Heat Care</h3>
+            <ul class="text-[var(--f-color)] list-disc pl-5 text-sm space-y-2">
+              <li>Stay hydrated with water & fruits.</li>
+              <li>Avoid sun between 12-3 PM.</li>
+              <li>Wear light, cotton clothes.</li>
+              <li>Use sunscreen for UV protection.</li>
+              <li>Keep indoors cool & airy.</li>
+            </ul>
+          </div>
+      
+         
+          <div class="bg-[var(--e-color)] rounded-xl shadow-md shadow-[var(--f-color)] p-5 w-72 text-left transform transition-transform duration-700 hover:scale-110">
+            <h3 class="text-[var(--c-color)] text-xl mb-2">Air Quality Tips</h3>
+            <ul class="text-[var(--f-color)] list-disc pl-5 text-sm space-y-2">
+              <li>Check AQI before outdoor plans.</li>
+              <li>Use N95 mask in pollution.</li>
+              <li>Air purifiers for indoor use.</li>
+              <li>Avoid morning walks in smog.</li>
+              <li>Stay indoors on poor AQI days.</li>
+            </ul>
+          </div>
+      
+       
+          <div class="bg-[var(--e-color)] rounded-xl shadow-md shadow-[var(--f-color)] p-5 w-72 text-left transform transition-transform duration-700 hover:scale-110">
+            <h3 class="text-[var(--c-color)] text-xl mb-2">Winter Protection</h3>
+            <ul class="text-[var(--f-color)] list-disc pl-5 text-sm space-y-2">
+              <li>Dress in warm layers.</li>
+              <li>Cover head, hands, and feet.</li>
+              <li>Keep skin moisturized.</li>
+              <li>Stay active to generate heat.</li>
+              <li>Drink warm fluids.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    
+      <footer class="bg-[#abbad8] py-12 text-center" id="connect">
+        <div class="social">
+          <h1 class="text-4xl font-bold">TempX</h1>
+          <p class="max-w-md mx-auto mt-3 text-gray-700">
+            A weather app that provides accurate and up-to-date weather information for users.
+          </p>
+          <div class="socialicons flex justify-center gap-6 mt-8 text-3xl text-gray-800">
+            <i class="fa-brands fa-facebook hover:translate-y-1 transition-transform duration-300"></i>
+            <i class="fa-brands fa-square-x-twitter hover:translate-y-1 transition-transform duration-300"></i>
+            <i class="fa-brands fa-linkedin hover:translate-y-1 transition-transform duration-300"></i>
+            <i class="fa-brands fa-instagram hover:translate-y-1 transition-transform duration-300"></i>
+          </div>
+        </div>
+        <div class="footerarea mt-6 text-sm text-gray-900">
+          <p>
+            Copyright &copy; 2025. TempX, <small>All Rights Reserved.</small>
+          </p>
+        </div> 
+      </footer>
+
+    <script src="./script.js"></script>
+</body>
+</html>
