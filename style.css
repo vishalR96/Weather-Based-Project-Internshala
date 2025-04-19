@@ -5,6 +5,7 @@ html, body{
     font-family: 'Poppins', sans-serif;
     scroll-behavior: smooth;
 }
+/* -------------------colours variables---------------------  */
 :root {
     --a-color: #FFFEFF;
     --b-color: white;
@@ -16,6 +17,7 @@ html, body{
     --h-color: black;
     --i-color: rgba(255, 255, 255, 0.068);
 }
+/* --------------------------- colours for dark theme ------------------------- */
 .dark {
     --a-color: #FFFEFF;
     --b-color: #0077b6;
@@ -27,6 +29,7 @@ html, body{
     --h-color: white;
     --i-color: rgba(255, 255, 255, 0.068);
 }
+/* ------------------------------ scroll bar -------------------------- */
 ::-webkit-scrollbar{
     width: 10px;
 }
@@ -37,7 +40,7 @@ html, body{
 ::-webkit-scrollbar-track{
     background: var(--d-color);
 }
-
+/* --------------------------images slider in page 3 ----------------------------  */
 @keyframes scroll {
     0% {
       transform: translateX(0);
@@ -52,6 +55,7 @@ html, body{
 .slider:hover .animate-scroll {
   animation-play-state: paused;
 } 
+/* -------------------------------slider code ends ---------------------------------  */
 .page1 {
     background: url(./pexels-fmaderebner-869258.jpg) no-repeat center center / cover;
 }
@@ -69,6 +73,7 @@ html, body{
     backdrop-filter: blur(5px);
     border: 2px solid var(--c-color);
 }
+/* ------------------------------------media queries--------------------------------  */
 @media (max-width: 768px) {
 html, body {
     overflow-x: hidden;
@@ -103,3 +108,4 @@ html, body {
     min-height: 55vh;
   }
 }
+/* -----------------------------------------css code ends here-----------------------------------  */

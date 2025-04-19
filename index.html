@@ -9,10 +9,14 @@
     <link rel="stylesheet" href="./style.css">
     <title>TempX - Your Companion</title>
 </head>
+<!-- ------------------------------html code starts here-----------------------------------  -->
 <body class="font-['Poppins'] tracking-[0.1rem] bg-[var(--d-color)] text-[var(--h-color)]">
+  <!-- ---------------------------------preloader ----------------------------------------------  -->
     <div id="preloader" class="fixed inset-0 h-full w-full bg-[var(--a-color)] bg-[url(./loader.gif)] bg-center bg-no-repeat bg-[40%] z-[9999]"></div>
+    <!-- ------------------------------------page 1 ---------------------------------------------   -->
     <header class="page1 w-full h-screen overflow-x-hidden" id="home">
       <div class="fixed top-0 left-0 w-full bg-white/50 z-[999] h-[13vh]">
+        <!-- -------------------------------------navbar--------------------------------------------- -->
           <nav class="navbar container mx-auto h-full flex items-center justify-between px-[9rem]">
               <div class="logo"><a href="#home"><h1 class="text-5xl font-bold font-['Allison'] text-black">Temp<span class="text-blue-600">X</span></h1></a></div>
               <div class="navitems">
@@ -27,7 +31,7 @@
               </div>
           </nav>
       </div>
-      
+      <!-- ----------------------------hero section----------------------------------------------------  -->
       <main>
           <div class="frame relative h-screen">
               <img src="./watch-removebg-preview.png" alt="" loading="lazy" class="hidden md:block absolute right-0 top-[30%] w-[40vw] max-w-full h-auto">
@@ -42,13 +46,14 @@
           </div>
       </main>
     </header>
-
+    <!-- ----------------------------------page 1 ends ------------------------------------  -->
+<!-- ------------------------------------------page 2 starts-------------------------------------------   -->
     <section class="page2 bg-[var(--d-color)] text-[var(--h-color)] py-4 sm:py-8 px-4 sm:px-[8rem]" id="wet">
       <h2 class="text-center text-3xl sm:text-5xl pt-2 sm:pt-4 text-[var(--c-color)]">"Weather Forecast"</h2>
       <h3 class="text-center text-base sm:text-2xl w-full sm:w-[80vw] pt-2 sm:pt-4 mx-auto font-normal pb-2 sm:pb-4">
         Discover what the sky has in store for you today — temperature, rain, wind, and more.
       </h3>
-    
+    <!-- ----------------------------Weather fetching box-------------------------------------   -->
       <div class="box container min-h-[100dvh] border-2 border-[var(--g-color)] rounded-3xl p-2 sm:p-4">
     
         <!-- Box 1 -->
@@ -115,6 +120,9 @@
         </div>
       </div>
     </section>
+    <!-- -------------------------------------------page 2 ends here -------------------------------------  -->
+
+    <!-- ----------------------------------------------page 3 starts here----------------------------------------  -->
     
     <section id="photos" class="min-h-screen w-full bg-[var(--d-color)] px-5 py-16 text-center page3">
         <div class="text-center pt-8 container frame1">
@@ -123,11 +131,12 @@
             Feel the forecast through imagery. Discover the beauty of weather through captivating images. From clear skies to stormy evenings, this section visually captures the essence of various weather conditions. Enjoy the scrolling Gallery and feel the vibe of nature's moods — all in one place.
         </h3>
         </div>
+        <!-- ----------------------------images slider ----------------------------------------   -->
         <div class="relative overflow-hidden w-[90%] mx-auto mt-8 slider">
             
             <div class="relative overflow-hidden w-[90%] mx-auto mt-8">
                 <div class="flex w-max animate-scroll">
-              
+                  <!-- ------------------------------images part 1 ---------------------------------    -->
                   <div class="flex">
                     <img src="./pexels-nurseryart-346885.jpg" class="w-80 h-60 mx-4 rounded-xl" loading="lazy" />
                     <img src="./pexels-akilmazumder-1072824.jpg" class="w-80 h-60 mx-4 rounded-xl" loading="lazy" />
@@ -135,7 +144,7 @@
                     <img src="./pexels-mali-142497.jpg" class="w-80 h-60 mx-4 rounded-xl" loading="lazy" />
                     <img src="./pexels-lucasallmann-612892.jpg" class="w-80 h-60 mx-4 rounded-xl" loading="lazy" />
                   </div>
-                 
+                  <!-- ------------------------------images part 2 duplicates -------------------------------    -->
                   <div class="flex">
                     <img src="./pexels-nurseryart-346885.jpg" class="w-80 h-60 mx-4 rounded-xl" loading="lazy" />
                     <img src="./pexels-akilmazumder-1072824.jpg" class="w-80 h-60 mx-4 rounded-xl" loading="lazy" />
@@ -143,7 +152,7 @@
                     <img src="./pexels-mali-142497.jpg" class="w-80 h-60 mx-4 rounded-xl" loading="lazy" />
                     <img src="./pexels-lucasallmann-612892.jpg" class="w-80 h-60 mx-4 rounded-xl" loading="lazy" />
                   </div>
-    
+                  <!-- ------------------------------images part 3 duplicates -------------------------------    -->
                   <div class="flex">
                     <img src="./pexels-nurseryart-346885.jpg" class="w-80 h-60 mx-4 rounded-xl" loading="lazy" />
                     <img src="./pexels-akilmazumder-1072824.jpg" class="w-80 h-60 mx-4 rounded-xl" loading="lazy" />
@@ -153,12 +162,14 @@
                   </div>
                 </div>
         
-           
+                  <!-- --------------------------- blue enter and leave -------------------  -->
             <div class="absolute top-0 left-0 h-60 w-20 bg-gradient-to-r from-[var(--a-color)] to-transparent z-10"></div>
             <div class="absolute top-0 right-0 h-60 w-20 bg-gradient-to-l from-[var(--a-color)] to-transparent z-10"></div>
           </div>
-          
       </section>
+      <!-- ----------------------------page 3 ends here------------------------------  -->
+
+      <!-- ----------------------------page 4 starts here------------------------------  -->
     
       <section id="safety" class="min-h-screen w-full bg-[var(--d-color)] px-5 py-16 text-center">
         <h2 class="text-5xl text-center text-[var(--c-color)]">"Weather Tips & Safety"</h2>
@@ -168,7 +179,7 @@
     
       
         <div class="flex flex-wrap justify-center gap-8">
-          
+          <!-- ---------card 1-------------   -->
           <div class="bg-[var(--e-color)] rounded-xl shadow-md shadow-[var(--f-color)] h-96 p-5 w-72 text-left transform transition-transform duration-700 hover:scale-110">
             <h3 class="text-[var(--c-color)] text-xl mb-2">Monsoon Safety Tips</h3>
             <ul class="text-[var(--f-color)] list-disc pl-5 text-sm space-y-2">
@@ -180,7 +191,7 @@
             </ul>
           </div>
       
-          
+          <!-- ---------card 2-------------   -->
           <div class="bg-[var(--e-color)] rounded-xl shadow-md shadow-[var(--f-color)] p-5 w-72 text-left transform transition-transform duration-700 hover:scale-110">
             <h3 class="text-[var(--c-color)] text-xl mb-2">Summer Heat Care</h3>
             <ul class="text-[var(--f-color)] list-disc pl-5 text-sm space-y-2">
@@ -192,7 +203,7 @@
             </ul>
           </div>
       
-         
+         <!-- ---------card 3-------------   -->
           <div class="bg-[var(--e-color)] rounded-xl shadow-md shadow-[var(--f-color)] p-5 w-72 text-left transform transition-transform duration-700 hover:scale-110">
             <h3 class="text-[var(--c-color)] text-xl mb-2">Air Quality Tips</h3>
             <ul class="text-[var(--f-color)] list-disc pl-5 text-sm space-y-2">
@@ -204,7 +215,7 @@
             </ul>
           </div>
       
-       
+       <!-- ---------card 4-------------   -->
           <div class="bg-[var(--e-color)] rounded-xl shadow-md shadow-[var(--f-color)] p-5 w-72 text-left transform transition-transform duration-700 hover:scale-110">
             <h3 class="text-[var(--c-color)] text-xl mb-2">Winter Protection</h3>
             <ul class="text-[var(--f-color)] list-disc pl-5 text-sm space-y-2">
@@ -217,13 +228,17 @@
           </div>
         </div>
       </section>
-    
+    <!-- ------------------------------------------page 4 ends here --------------------------------  -->
+
+
+  <!-- --------------------------------footer section -------------------------------  -->
       <footer class="bg-[#abbad8] py-12 text-center" id="connect">
         <div class="social">
           <h1 class="text-4xl font-bold">TempX</h1>
           <p class="max-w-md mx-auto mt-3 text-gray-700">
             A weather app that provides accurate and up-to-date weather information for users.
           </p>
+          <!-- ------------------------------social media icons-----------------------  -->
           <div class="socialicons flex justify-center gap-6 mt-8 text-3xl text-gray-800">
             <i class="fa-brands fa-facebook hover:translate-y-1 transition-transform duration-300"></i>
             <i class="fa-brands fa-square-x-twitter hover:translate-y-1 transition-transform duration-300"></i>
@@ -237,7 +252,12 @@
           </p>
         </div> 
       </footer>
+        <!-- --------------------------------footer section -------------------------------  -->
 
+
+
+      <!-- --------------------------- javascript code linked------------------------------------  -->
     <script src="./script.js"></script>
 </body>
 </html>
+<!-- ----------------------------------html code ends here-------------------------------  -->

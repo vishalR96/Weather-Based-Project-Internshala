@@ -1,3 +1,5 @@
+// -------------------------JS CODE STARTS FROM HERE------------------------------------
+// ------------------------JS CODE FOR DAY NIGHT TOGGLE MODE-------------------------- 
 let icon = document.getElementById("icon")
 icon.onclick = function(){
   document.body.classList.toggle("dark")
@@ -7,16 +9,16 @@ icon.onclick = function(){
     icon.src = "moon.png"
   }
 }
-// ----------------------------------------------------------------------  
+// -------------------------JS CODE FOR PRELOADER---------------------------------------------  
 let a = document.getElementById("preloader")
 window.addEventListener("load", function(){
     setTimeout(() => {
         a.style.display = "none"
     }, 5000)
 })
-// ===================================================================
-// weather based data-----------------------------------------------------------
+// -----------------JS CODE FOR weather based data---------------------------------------------
 
+// ---------------------API KEY ------------------------------------------------------------------
 const apiKey = "9b57f5437ad719906a29efde198f57c6";
 const apiUrl = "https://api.openweathermap.org/data/2.5/weather?";
 const forecastUrl = "https://api.openweathermap.org/data/2.5/forecast?q=";
@@ -27,10 +29,10 @@ const weathericon = document.querySelector(".col3 .weathericon");
 const recentCitiesDropdown = document.querySelector(".recent-cities-dropdown");
 const locationIcon = document.querySelector(".fa-location-crosshairs"); // Icon element
 
-// Load recent cities from local storage and update the dropdown
+// ------------------Loading recent cities from local storage and update the dropdown----------------
 function loadRecentCities() {
   const recentCities = JSON.parse(localStorage.getItem("recentCities")) || [];
-  recentCitiesDropdown.innerHTML = ""; // Clear the dropdown menu
+  recentCitiesDropdown.innerHTML = ""; 
 
   if (recentCities.length > 0) {
     recentCities.forEach(city => {
@@ -39,13 +41,13 @@ function loadRecentCities() {
       cityOption.innerText = city;
       recentCitiesDropdown.appendChild(cityOption);
     });
-    recentCitiesDropdown.style.display = "block"; // Show the dropdown if there are recent cities
+    recentCitiesDropdown.style.display = "block"; // Showing the dropdown 
   } else {
-    recentCitiesDropdown.style.display = "none"; // Hide the dropdown if there are no recent cities
+    recentCitiesDropdown.style.display = "none"; // Hiding the dropdown 
   }
 }
 
-// Save the recent cities to localStorage
+// --------------------Saving the recent cities to localStorage-----------------------------------------
 function saveRecentCity(city) {
   let recentCities = JSON.parse(localStorage.getItem("recentCities")) || [];
   if (!recentCities.includes(city)) {
@@ -58,7 +60,7 @@ function saveRecentCity(city) {
   loadRecentCities();
 }
 
-// Fetch current weather for the selected city
+// -------------------Fetch current weather for the selected city----------------------------------------
 async function checkWeather(city) {
   try {
     const response = await fetch(apiUrl + "q=" + city + "&units=metric&appid=" + apiKey);
@@ -83,11 +85,11 @@ async function checkWeather(city) {
     } else if (condition === "Mist") {
       weathericon.src = "mist.png";
     } else if (condition === "Rain") {
-      weathericon.src = "rain.png"; // make sure file is lowercase
+      weathericon.src = "rain.png"; 
     } else if (condition === "Snow") {
       weathericon.src = "snow.png";
     } else {
-      weathericon.src = "default.png"; // fallback icon
+      weathericon.src = "default.png";
     }
 
     document.querySelectorAll(".panel").forEach(element => {
@@ -99,7 +101,7 @@ async function checkWeather(city) {
   }
 }
 
-// Fetch the forecast for the selected city
+// ----------------------------------Fetch the forecast for the selected city---------------------------
 async function getForecast(city) {
   try {
     const res = await fetch(forecastUrl + city + "&units=metric&appid=" + apiKey);
@@ -129,7 +131,7 @@ async function getForecast(city) {
   }
 }
 
-// Get the user's live location (using Geolocation API)
+// ------------------------Getting the user's live location------------------------------------------
 function getUserLocation() {
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(position => {
@@ -137,7 +139,6 @@ function getUserLocation() {
       const lon = position.coords.longitude;
       console.log("Latitude:", lat, "Longitude:", lon);
 
-      // Fetch weather data using latitude and longitude
       checkWeatherByCoordinates(lat, lon);
     }, error => {
       alert("Error retrieving location: " + error.message);
@@ -147,7 +148,6 @@ function getUserLocation() {
   }
 }
 
-// Fetch weather based on coordinates (latitude and longitude)
 async function checkWeatherByCoordinates(lat, lon) {
   try {
     const response = await fetch(apiUrl + "lat=" + lat + "&lon=" + lon + "&units=metric&appid=" + apiKey);
@@ -172,11 +172,11 @@ async function checkWeatherByCoordinates(lat, lon) {
     } else if (condition === "Mist") {
       weathericon.src = "mist.png";
     } else if (condition === "Rain") {
-      weathericon.src = "rain.png"; // make sure file is lowercase
+      weathericon.src = "rain.png"; 
     } else if (condition === "Snow") {
       weathericon.src = "snow.png";
     } else {
-      weathericon.src = "default.png"; // fallback icon
+      weathericon.src = "default.png"; 
     }
 
     document.querySelectorAll(".panel").forEach(element => {
@@ -188,14 +188,14 @@ async function checkWeatherByCoordinates(lat, lon) {
   }
 }
 
-// Event listener for the location icon
+// -----------------Event listener for the location icon---------------------------------------
 locationIcon.addEventListener("click", () => {
   // Prompt the user to allow access to their location
   alert("Please allow access to your location to get the weather!");
   getUserLocation();
 });
 
-// Event listener for the search button
+// --------------------------Event listener for the search button------------------------------
 searchBtn.addEventListener("click", () => {
   const city = searchBox.value.trim();
   if (city === "") {
@@ -205,14 +205,14 @@ searchBtn.addEventListener("click", () => {
   checkWeather(city);
   getForecast(city);
 
-  // Clear the input field after the search
+  //------------------- Clear the input field after the search----------------------------------
   searchBox.value = "";
 
-  // Save the searched city and update recent cities dropdown
+  // --------------------Save the searched city and update recent cities dropdown------------
   saveRecentCity(city);
 });
 
-// Event listener for selecting a city from the dropdown
+//-------------- Event listener for selecting a city from the dropdown------------------------
 recentCitiesDropdown.addEventListener("change", (event) => {
   const selectedCity = event.target.value;
   if (selectedCity) {
@@ -221,7 +221,6 @@ recentCitiesDropdown.addEventListener("change", (event) => {
   }
 });
 
-// Initial loading of recent cities when the page loads
+
 window.addEventListener("DOMContentLoaded", loadRecentCities);
-
-
+// ---------------------------------js code ends here-------------------------------------
